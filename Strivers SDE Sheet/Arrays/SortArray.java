@@ -1,5 +1,7 @@
 // Q:  Sort an array of 0s, 1s and 2s
 
+// Approach 1:
+
 class Solution
 {
     public static void SortArray(int a[], int n)
@@ -34,3 +36,32 @@ class Solution
         }
     }
 }
+
+//  Approach 2:
+    
+    public static void SortArray(int a[], int n){
+             int i = 0;
+             int start = 0;
+             int end = n-1;
+
+             while(i<=end){
+                 if(a[i]==0){
+                 swap(a,i,start);
+                 start++;
+                 i++;
+               }
+                 else if(a[i]==1){
+                  i++;
+                 }
+                 else{
+                 swap(a,i,end);
+                 end--;
+               }
+             }
+           }
+
+        static void swap(int arr[],int start,int end){
+        int temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        }
